@@ -3,7 +3,7 @@ written by Robin Kuck < robin @ basicinside.de >
 
 Just a quick hack to send notifications, when incoming calls arrive on the fritz box
 
-	* Resolves Names through the file "phonebook"
+	* resolve callers name through the file "phonebook" (automatically created, when first call arrives)
 
 
 --- Requirements ---
@@ -15,3 +15,11 @@ Just a quick hack to send notifications, when incoming calls arrive on the fritz
 Run the following:
 	chmod +x call.rb
 	./call.rb
+
+
+---TODO---
+(no order)
+	* Code cleanup & structure
+	* config file
+	* clone repo & develop a gnome tray
+	* be quiet, when network does not know the fritz.box hostname 
