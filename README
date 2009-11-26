@@ -7,7 +7,7 @@ Just a quick hack to send notifications, when incoming calls arrive on the fritz
 
 
 --- Requirements ---
-	* libnotify-send
+	* notify-send
 	* fritz.box-Callmonitor on Port 1012
 	* ruby
 
