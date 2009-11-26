@@ -11,16 +11,20 @@ class PhoneDirectory
 	end
 
 	def searchNumber(num)
-		f = File.open("phonebook", "r")
-		while entry = f.readline.chomp
-			(number, name) = entry.split(";")
-			if number == num
-				return name
+		if File.exists?("phonebook")
+			f = File.open("phonebook", "r+")
+			while entry = f.readline.chomp
+				(number, name) = entry.split(";")
+				if number == num
+					return name
+				end
 			end
+				""
 		end
-		rescue EOFError
-    f.close
 		""
+		rescue EOFError
+    	f.close	
+		
 	end
 
 	
