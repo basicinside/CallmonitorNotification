@@ -1,0 +1,17 @@
+---- CallmonitorNotification ----
+written by Robin Kuck < robin @ basicinside.de >
+
+Just a quick hack to send notifications, when incoming calls arrive on the fritz box
+
+	* Resolves Names through the file "phonebook"
+
+
+--- Requirements ---
+	* libnotify-send
+	* fritz.box-Callmonitor on Port 1012
+	* ruby
+
+--- Start ---
+Run the following:
+	chmod +x call.rb
+	./call.rb
