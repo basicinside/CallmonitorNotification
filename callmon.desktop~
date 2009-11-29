@@ -1,9 +1,0 @@
-
-[Desktop Entry]
-Name=Anrufmonitor
-Type=Application
-GenericName=CallmonitorNotification
-Comment=Display incoming calls
-Exec=sh "~/.CallmonitorNotification/start.sh"
-X-GNOME-Autostart-enabled=true
-Icon=/usr/share/pixmaps/gnome-irc.png
