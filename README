@@ -3,23 +3,23 @@ written by Robin Kuck < robin @ basicinside.de >
 
 Just a quick hack to send notifications, when incoming calls arrive on the fritz box
 
+	* display incoming calls
 	* resolve callers name through the file "phonebook" (automatically created, when first call arrives)
+	* try reconnect, if host isn't reachable
+
 
 
 --- Requirements ---
 	* notify-send
 	* fritz.box-Callmonitor on Port 1012
 	* ruby
+	* optional pidgin (for the pixmap in the notification)
 
---- Start ---
-Run the following:
-	chmod +x call.rb
-	./call.rb
+--- Install ---
+Run "sh install.sh"
 
 
 ---TODO---
 (no order)
-	* Code cleanup & structure
 	* config file
 	* clone repo & develop a gnome tray
-	* be quiet, when network does not know the fritz.box hostname 
