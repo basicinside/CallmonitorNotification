@@ -1,7 +1,6 @@
 class PhoneDirectory
 
 	def initialize
-		
 	end
 
 	def add(number, name)
@@ -19,14 +18,10 @@ class PhoneDirectory
 					return name
 				end
 			end
-				""
+			""
 		end
 		""
 		rescue EOFError
-    	f.close	
-		
+    f.close	
 	end
-
-	
-
 end

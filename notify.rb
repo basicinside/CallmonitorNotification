@@ -1,6 +1,5 @@
 class Notify
 	def initialize()
-
 	end
 
 	def display
