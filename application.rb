@@ -6,7 +6,12 @@ require "socket"
 
 class CallmonitorNotificationApp
 	def initialize
+		@status = "disconnect"
 		connect
+	end	
+
+	def status 
+		@status
 	end	
 				
  	def connect
@@ -20,12 +25,15 @@ class CallmonitorNotificationApp
 				error = true
 			end
 			if error == false
+				File.open("callmonitor.online", "a")
 				puts "addr: " + @s.addr.join(":")
 				puts "peer: " + @s.peeraddr.join(":")
+				@status = "connected"
 				listen
 				@s.close
 			end
-			system 'sleep 30'
+			@status = "disconnect"
+			sleep 30
 		end
 	end
 
@@ -42,7 +50,7 @@ class CallmonitorNotificationApp
 	def incomingCall(number)
 		phonebook = PhoneDirectory.new
 		if (name = phonebook.searchNumber(number)) == ""
-			phonebook.add(number, "unknown, but registered caller")
+			phonebook.add(number, "unknown")
 			name = number
 		end
 		notifyCall(name)
@@ -50,12 +58,11 @@ class CallmonitorNotificationApp
 
 	def notifyCall(caller)
 		callerNotify = Notify.new
-		callerNotify.setIcon("/usr/share/pixmaps/pidgin/emotes/default/phone.png")
+		callerNotify.setIcon(File.expand_path("phone.png"))
 		callerNotify.setTitle("incoming Call")
-		callerNotify.setText("#{caller} invokes you.")
+		callerNotify.setText("#{caller} invokes.")
 		callerNotify.display
 	end
 end
 
 CallmonitorNotificationApp.new
-
