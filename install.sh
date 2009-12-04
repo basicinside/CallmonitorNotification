@@ -16,6 +16,7 @@ cp ./start.sh ~/.CallmonitorNotification/
 cp ./start_gui.sh ~/.CallmonitorNotification/
 cp ./phonebook ~/.CallmonitorNotification/
 cp ./phone.png ~/.CallmonitorNotification/
+cp ./phone-disabled.png ~/.CallmonitorNotification/
 cp ./gui.rb ~/.CallmonitorNotification/
 
 USER=`whoami`
