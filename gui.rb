@@ -23,18 +23,20 @@ class CallGUI
         menu.popup(nil, nil, button, time)        
     end
 		}
+		GLib::Timeout.add_seconds(3){ 
 		puts "test"
 		fetchGUIThread = nil
 		if fetchGUIThread.instance_of? Thread
 				fetchGUIThread.terminate
-				fetchGUIThread = nil
-				puts "is Thread"
+				fetchGUIThread = nil		
+				puts "is Parent"
+				
 		else
 			fetchGUIThread = Thread.new {
 				#puts "in Thread"
 				while !File.exists?("callmonitor.online")
 					puts "GUI: Waiting for connection"
-					sleep 5
+					sleep 10
 					
 				end
 				statusIcon.file = File.expand_path("phone.png")
@@ -45,6 +47,7 @@ class CallGUI
 			puts "Thread was started"
 			puts fetchGUIThread.status
 		end
+		}
 		#puts "GTk running"
 		Gtk.main  
 		#puts "gtk quitted"
